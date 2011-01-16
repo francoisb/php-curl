@@ -60,7 +60,7 @@ class Mlz_Curl_Request_Factory_Ftp
             umask($old);
             if (!$mkdir)
             {
-                throw new RuntimeException('Unable to get file "%s": can\'t create target dir "%s"', $options['url'], $options['create_dir']);
+                throw new RuntimeException(sprintf('Unable to get file "%s": can\'t create target dir "%s"', $options['url'], $options['create_dir']));
             }
         }
 
@@ -72,7 +72,7 @@ class Mlz_Curl_Request_Factory_Ftp
         $option['target_file'] = tmpfile($options['target_dir']);
         if (!$option['file_handler'] = fopen($option['target_file'], 'w+'))
         {
-            throw new RuntimeException('Unable to get file "%s" : can\'t create destination file "%s"', $options['url'], $option['target_file']);
+            throw new RuntimeException(sprintf('Unable to get file "%s" : can\'t create destination file "%s"', $options['url'], $option['target_file']));
         }
 
         $curlOptions[CURLOPT_HEADER]         = false;

@@ -41,8 +41,11 @@ class Mlz_Curl_Response_Converter_ArrayTest extends PHPUnit_Framework_TestCase
         $converted = $converter->convert($response);
 
         $this->assertTrue(is_array($converted));
-        $this->assertEquals(count($converted), 210);
-        $this->assertEquals($converted[0], 'CATALOG');
+        $this->assertEquals(count($converted), 1);
+        $this->assertTrue(is_array($converted['CATALOG']));
+        $this->assertEquals(count($converted['CATALOG']), 1);
+        $this->assertTrue(is_array($converted['CATALOG']['CD']));
+        $this->assertEquals(count($converted['CATALOG']['CD']), 26);
     }
 
     public function testJsonException()

@@ -213,9 +213,9 @@ class Mlz_Curl_Request extends Mlz_Option
         if ($this->hasOption('logger'))
         {
             $logger = $this->getOption('logger');
-            if (!$logger instanceof mlzCurlLogger)
+            if (!$logger instanceof Mlz_Curl_Logger)
             {
-                throw new InvalidArgumentException(sprintf('Logger is not an instance of "%s"', 'mlzCurlLogger'));
+                throw new InvalidArgumentException(sprintf('Logger option is not an instance of "%s"', 'Mlz_Curl_Logger'));
             }
 
             $logger->start();
