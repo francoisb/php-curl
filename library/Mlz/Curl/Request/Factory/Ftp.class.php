@@ -13,9 +13,9 @@ class Mlz_Curl_Request_Factory_Ftp
     /**
      * Create a new FTP LIST request.
      *
-     * @param  array $curlOptions (optional)
-     * @param  array $options (optional)
-     * @param  string $classname (optional)
+     * @param  array            $curlOptions (optional)
+     * @param  array            $options (optional)
+     * @param  string           $classname (optional)
      * @return mlzCurlRequest
      */
     static public function createList(array $curlOptions = array(), array $options = array(), $classname = null)
@@ -31,14 +31,15 @@ class Mlz_Curl_Request_Factory_Ftp
     /**
      * Create a new FTP GET request.
      *
-     * @param  array $curlOptions (optional)
-     * @param  array $options (optional)
-     * @param  string $classname (optional)
+     * @param  array            $curlOptions (optional)
+     * @param  array            $options (optional)
+     * @param  string           $classname (optional)
      * @return mlzCurlRequest
+     * @todo
      */
     static public function createGet(array $curlOptions = array(), array $options = array(), $classname = null)
     {
-        if (!isset($options['url']))
+        /*if (!isset($options['url']))
         {
             throw new RuntimeException(sprintf('option "%s" is required', 'url'));
         }
@@ -82,20 +83,21 @@ class Mlz_Curl_Request_Factory_Ftp
         $curlOptions[CURLOPT_FTP_USE_EPSV]   = false;
         $curlOptions[CURLOPT_FILE]           = $option['file_handler'];
 
-        return Mlz_Curl_Request_Factory::create($curlOptions, $options, $classname);
+        return Mlz_Curl_Request_Factory::create($curlOptions, $options, $classname);*/
     }
 
     /**
      * Create a new FTP PUT request.
      *
-     * @param  array $curlOptions (optional)
-     * @param  array $options (optional)
-     * @param  string $classname (optional)
+     * @param  array            $curlOptions (optional)
+     * @param  array            $options (optional)
+     * @param  string           $classname (optional)
      * @return mlzCurlRequest
+     * @todo
      */
     static public function createPut($file, array $curlOptions = array(), array $options = array(), $classname = null)
     {
-        //check is valid file
+        /*//check is valid file
         if (!is_file($file))
         {
             throw new InvalidArgumentException('Unable to put file "'.$file.'" : file not exist');
@@ -138,16 +140,16 @@ class Mlz_Curl_Request_Factory_Ftp
         //close ressources
         fclose($fhandler);
 
-        return $result;
+        return $result;*/
   }
 
     /**
      * Create a new FTP DELETE request.
      *
-     * @param  string|array $files
-     * @param  array $curlOptions (optional)
-     * @param  array $options (optional)
-     * @param  string $classname (optional)
+     * @param  string|array     $files
+     * @param  array            $curlOptions (optional)
+     * @param  array            $options (optional)
+     * @param  string           $classname (optional)
      * @return mlzCurlRequest
      */
     static public function createDelete($files, array $curlOptions = array(), array $options = array(), $classname = null)

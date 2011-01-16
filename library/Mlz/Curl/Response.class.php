@@ -18,7 +18,7 @@ class Mlz_Curl_Response
     /**
      * Constructor.
      *
-     * @param   string $content
+     * @param   string          $content
      * @param   Mlz_Curl_Response_Header $header
      * @param   mlz_Curl_Response_Infos $infos
      */

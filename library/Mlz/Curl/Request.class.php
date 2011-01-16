@@ -148,7 +148,7 @@ class Mlz_Curl_Request extends Mlz_Option
     /**
      * Create a curl response header.
      *
-     * @param   resource $curlHandler
+     * @param   resource        $curlHandler
      * @return  Mlz_Curl_Response_Infos
      */
     protected function createCurlResponseInfos($curlHandler)
@@ -173,6 +173,7 @@ class Mlz_Curl_Request extends Mlz_Option
         }
 
         $curlHandler = curl_init($this->fixUrl($this->getRequiredOption('url')));
+        print_r($this->getCurlOptions());
         foreach ($this->getCurlOptions() as $key => $value)
         {
             curl_setopt($curlHandler, $key, $value);
@@ -206,7 +207,7 @@ class Mlz_Curl_Request extends Mlz_Option
     /**
      * Do stuff before execute request.
      *
-     * @param   resource $curlHandler
+     * @param   resource        $curlHandler
      */
     protected function beforeExecute($curlHandler)
     {
@@ -227,7 +228,7 @@ class Mlz_Curl_Request extends Mlz_Option
     /**
      * Do stuff after execute request.
      *
-     * @param   resource $curlHandler
+     * @param   resource        $curlHandler
      */
     protected function afterExecute($curlHandler)
     {
@@ -241,7 +242,7 @@ class Mlz_Curl_Request extends Mlz_Option
     /**
      * Fix an url.
      *
-     * @param   string $url
+     * @param   string          $url
      * @return  string
      */
     protected function fixUrl($url)

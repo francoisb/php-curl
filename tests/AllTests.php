@@ -5,6 +5,8 @@ require_once dirname(__FILE__).'/Mlz/Curl/LoggerTest.php';
 require_once dirname(__FILE__).'/Mlz/Curl/RequestTest.php';
 require_once dirname(__FILE__).'/Mlz/Curl/RequestMockTest.php';
 require_once dirname(__FILE__).'/Mlz/Curl/Request/FactoryTest.php';
+require_once dirname(__FILE__).'/Mlz/Curl/Request/Factory/HttpTest.php';
+require_once dirname(__FILE__).'/Mlz/Curl/Request/Factory/FtpTest.php';
 require_once dirname(__FILE__).'/Mlz/Curl/ResponseTest.php';
 require_once dirname(__FILE__).'/Mlz/Curl/Response/InfosTest.php';
 require_once dirname(__FILE__).'/Mlz/Curl/Response/HeaderTest.php';
@@ -28,6 +30,8 @@ class AllTests
         $suite->addTestSuite('Mlz_Curl_RequestTest');
         $suite->addTestSuite('Mlz_Curl_RequestMockTest');
         $suite->addTestSuite('Mlz_Curl_Request_FactoryTest');
+        $suite->addTestSuite('Mlz_Curl_Request_Factory_HttpTest');
+        $suite->addTestSuite('Mlz_Curl_Request_Factory_FtpTest');
         $suite->addTestSuite('Mlz_Curl_ResponseTest');
         $suite->addTestSuite('Mlz_Curl_Response_InfosTest');
         $suite->addTestSuite('Mlz_Curl_Response_HeaderTest');

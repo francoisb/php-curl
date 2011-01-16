@@ -13,9 +13,9 @@ class Mlz_Curl_Request_Factory_Http
     /**
      * Create a new HTTP request using GET method.
      *
-     * @param  array $curlOptions (optional)
-     * @param  array $options (optional)
-     * @param  string $classname (optional)
+     * @param  array            $curlOptions (optional)
+     * @param  array            $options (optional)
+     * @param  string           $classname (optional)
      * @return mlzCurlRequest
      */
     static public function createGet(array $curlOptions = array(), array $options = array(), $classname = null)
@@ -29,10 +29,10 @@ class Mlz_Curl_Request_Factory_Http
     /**
      * Create a new HTTP request using POST method.
      *
-     * @param  array $data An associative array of data to send.
-     * @param  array $curlOptions (optional)
-     * @param  array $options (optional)
-     * @param  string $classname (optional)
+     * @param  array            $data An associative array of data to send.
+     * @param  array            $curlOptions (optional)
+     * @param  array            $options (optional)
+     * @param  string           $classname (optional)
      * @return mlzCurlRequest
      */
     static public function createPost(array $postData, array $curlOptions = array(), array $options = array(), $classname = null)

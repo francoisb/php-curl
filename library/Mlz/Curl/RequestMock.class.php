@@ -13,7 +13,7 @@ class Mlz_Curl_RequestMock extends Mlz_Curl_Request
     /**
      * Create a curl response header.
      *
-     * @param   resource $curlHandler
+     * @param   resource        $curlHandler
      * @return  Mlz_Curl_Response_Header
      */
     protected function createCurlResponseHeader($curlHandler)
@@ -24,7 +24,7 @@ class Mlz_Curl_RequestMock extends Mlz_Curl_Request
     /**
      * Create a curl response header.
      *
-     * @param   resource $curlHandler
+     * @param   resource        $curlHandler
      * @return  Mlz_Curl_Response_Infos
      */
     protected function createCurlResponseInfos($curlHandler)
@@ -45,7 +45,7 @@ class Mlz_Curl_RequestMock extends Mlz_Curl_Request
     /**
      * Exeucte the request and return the content.
      *
-     * @param   resource $curlHandler
+     * @param   resource        $curlHandler
      * @return  string
      * @throws  Mlz_Curl_Exception
      */
@@ -57,7 +57,7 @@ class Mlz_Curl_RequestMock extends Mlz_Curl_Request
     /**
      * Do stuff before execute request.
      *
-     * @param   resource $curlHandler
+     * @param   resource        $curlHandler
      */
     protected function beforeExecute($curlHandler)
     {
@@ -67,7 +67,7 @@ class Mlz_Curl_RequestMock extends Mlz_Curl_Request
     /**
      * Do stuff after execute request.
      *
-     * @param   resource $curlHandler
+     * @param   resource        $curlHandler
      */
     protected function afterExecute($curlHandler)
     {

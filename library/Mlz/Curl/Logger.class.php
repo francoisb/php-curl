@@ -17,7 +17,7 @@ class Mlz_Curl_Logger extends Mlz_Option
      * Return the file handler.
      *
      * @return resource
-     * @throw  RuntimeException
+     * @throws  RuntimeException
      */
     public function getFileHandler()
     {

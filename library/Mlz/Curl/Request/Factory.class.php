@@ -19,13 +19,17 @@ class Mlz_Curl_Request_Factory
     /**
      * Create a new request.
      *
-     * @param  array $curlOptions (optional)
-     * @param  array $options (optional)
-     * @param  string $classname (optional)
+     * @param  array            $curlOptions (optional)
+     * @param  array            $options (optional)
+     * @param  string           $classname (optional)
      * @return mlzCurlRequest
      */
-    static public function create(array $curlOptions = array(), array $options = array(), $classname = 'Mlz_Curl_Request')
+    static public function create(array $curlOptions = array(), array $options = array(), $classname =  null)
     {
+        if (is_null($classname))
+        {
+            $classname = 'Mlz_Curl_Request';
+        }
         $classname = self::getPrefix().$classname.self::getSuffix();
 
         if (!class_exists($classname))
@@ -48,7 +52,7 @@ class Mlz_Curl_Request_Factory
     /**
      * Set the common defaults options.
      *
-     * @param  array $options
+     * @param  array            $options
      */
     static public function setDefaultOptions(array $options)
     {
@@ -68,7 +72,7 @@ class Mlz_Curl_Request_Factory
     /**
      * Set the common defaults CURL options.
      *
-     * @param  array $options
+     * @param  array            $options
      */
     static public function setDefaultCurlOptions(array $options)
     {
@@ -88,7 +92,7 @@ class Mlz_Curl_Request_Factory
     /**
      * Set the classname prefix.
      *
-     * @param  string $prefix
+     * @param  string       $prefix
      */
     static public function setPrefix($prefix)
     {
@@ -108,7 +112,7 @@ class Mlz_Curl_Request_Factory
     /**
      * Set the classname prefix.
      *
-     * @param  string $sufix
+     * @param  string           $sufix
      */
     static public function setSuffix($suffix)
     {

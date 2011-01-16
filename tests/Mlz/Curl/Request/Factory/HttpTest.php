@@ -11,16 +11,21 @@ Mlz_Curl_Autoload::register();
  * @package     Mlz_Curl
  * @author      François Béliveau  <francois.beliveau@my-labz.com>
  * @link        http://www.phpunit.de/
+ * @todo
  */
-class Mlz_Request_Factory_HttpTest extends PHPUnit_Framework_TestCase
+class Mlz_Curl_Request_Factory_HttpTest extends PHPUnit_Framework_TestCase
 {
-    public function testCreateGet()
+    /*public function testCreateGet()
     {
-        $request = Mlz_Request_Factory_Http::createGet();
+        Mlz_Curl_Request_Factory::setSuffix('');
+        Mlz_Curl_Request_Factory::setPrefix('');
+        $request = Mlz_Curl_Request_Factory_Http::createGet(array(), array('url' => 'http://my-labz.com/'));
+
+        $request->execute();
     }
 
     public function testCreatePost()
     {
-        $request = Mlz_Request_Factory_Http::createPost();
-    }
+        $request = Mlz_Curl_Request_Factory_Http::createPost(array('foo' => 'bar'));
+    }*/
 }

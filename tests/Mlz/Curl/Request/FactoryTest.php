@@ -21,12 +21,10 @@ class Mlz_Curl_Request_FactoryTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('', Mlz_Curl_Request_Factory::getSuffix());
         $this->assertEquals('', Mlz_Curl_Request_Factory::getPrefix());
 
-
         Mlz_Curl_Request_Factory::setSuffix('Suffix');
         Mlz_Curl_Request_Factory::setPrefix('Prefix');
         $this->assertEquals('Suffix', Mlz_Curl_Request_Factory::getSuffix());
         $this->assertEquals('Prefix', Mlz_Curl_Request_Factory::getPrefix());
-
 
         Mlz_Curl_Request_Factory::setSuffix('');
         Mlz_Curl_Request_Factory::setPrefix('');
@@ -36,12 +34,12 @@ class Mlz_Curl_Request_FactoryTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(array(), Mlz_Curl_Request_Factory::getDefaultOptions());
         $this->assertEquals(array(), Mlz_Curl_Request_Factory::getDefaultCurlOptions());
-        
+
         Mlz_Curl_Request_Factory::setDefaultOptions(array('foo' => 'bar', 'f' => 'b'));
         Mlz_Curl_Request_Factory::setDefaultCurlOptions(array('bar' => 'foo'));
         $this->assertEquals(array('foo' => 'bar', 'f' => 'b'), Mlz_Curl_Request_Factory::getDefaultOptions());
         $this->assertEquals(array('bar' => 'foo'), Mlz_Curl_Request_Factory::getDefaultCurlOptions());
-        
+
         Mlz_Curl_Request_Factory::setDefaultOptions(array());
         Mlz_Curl_Request_Factory::setDefaultCurlOptions(array());
     }
@@ -57,18 +55,15 @@ class Mlz_Curl_Request_FactoryTest extends PHPUnit_Framework_TestCase
 
         Mlz_Curl_Request_Factory::setSuffix('');
 
-
         $request = Mlz_Curl_Request_Factory::create();
         $this->assertEquals(get_class($request), 'Mlz_Curl_Request');
         $this->assertEquals(array(), $request->getCurlOptions());
         $this->assertEquals(array(), $request->getOptions());
 
-
         $request = Mlz_Curl_Request_Factory::create(array('foo' => 'bar'), array('bar' => 'foo'), 'Mlz_Curl_RequestMock');
         $this->assertEquals(get_class($request), 'Mlz_Curl_RequestMock');
         $this->assertEquals(array('foo' => 'bar'), $request->getCurlOptions());
         $this->assertEquals(array('bar' => 'foo'), $request->getOptions());
-
 
         Mlz_Curl_Request_Factory::setDefaultCurlOptions(array('foo' => 'bar', 'f' => 'b'));
         Mlz_Curl_Request_Factory::setDefaultOptions(array('bar' => 'foo'));
@@ -77,7 +72,7 @@ class Mlz_Curl_Request_FactoryTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(get_class($request), 'Mlz_Curl_Request');
         $this->assertEquals(array('foo' => 'bar2', 'f' => 'b'), $request->getCurlOptions());
         $this->assertEquals(array('bar' => 'foo', 'bar2' => 'foo'), $request->getOptions());
-        
+
         Mlz_Curl_Request_Factory::setDefaultOptions(array());
         Mlz_Curl_Request_Factory::setDefaultCurlOptions(array());
     }
@@ -85,7 +80,7 @@ class Mlz_Curl_Request_FactoryTest extends PHPUnit_Framework_TestCase
     public function testUnknownClassException()
     {
         $this->setExpectedException('InvalidArgumentException');
-        
+
         Mlz_Curl_Request_Factory::setSuffix('Dummy');
 
         $request = Mlz_Curl_Request_Factory::create();
